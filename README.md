@@ -16,7 +16,7 @@ pip install git+https://github.com/nathanrchn/perplexityai.git
 
 ## Usage
 
-At the moment there's two commands you can see in Command Pallete (`cmd+p`)
+At the moment there's two commands you can see in Command Pallete (`ctrl+p`)
 
 1. Perplexity API: Prompt selection
 2. Perplexity API: Prompt selection (return with links)
@@ -25,7 +25,7 @@ First command will replace your selection with answer from Perplexity, second wi
 
 ## Example usage
 
-Imagine you selelected 'What is Obsidian.MD?' in your editor and one of the commands, here's what you got then:
+You selelected 'What is Obsidian.MD?' in your editor and one of the commands, here's what you got then:
 
 ### Without links
 
