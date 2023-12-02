@@ -1,0 +1,11 @@
+{
+  "id": "pplxapi",
+  "name": "Perplexity API",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Unofficial perplexity integration for obsidian",
+  "author": "V4nden",
+  "authorUrl": "https://github.com/VandenMiner",
+  "fundingUrl": "https://obsidian.md/pricing",
+  "isDesktopOnly": true
+}
