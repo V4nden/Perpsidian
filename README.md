@@ -12,7 +12,7 @@ First of all, install Python 3.12.0>. After that, run following command:
 pip install git+https://github.com/nathanrchn/perplexityai.git
 ```
 
-**And that's all!** Now clone 'Perplexity' folder into your obsidian plugins folder and restart the app!
+**And that's all!** Now install Perpsidian and restart the app!
 
 ## Usage
 
