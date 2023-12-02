@@ -1,6 +1,6 @@
 # Perpsidian v1.0
 
-Use [PerplexityAi](https://perplexity.ai) inside the Obsidian.MD app
+Use [PerplexityAI](https://perplexity.ai) inside the Obsidian.MD app
 
 Basicly what i did here is using unofficial api wrapper written by [nathanrchn](https://github.com/nathanrchn/) in python, so you have to install it.
 
