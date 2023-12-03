@@ -20,18 +20,14 @@ Now install Perpsidian:
 4. Restart Obsidian
 5. **You're done!**
 
-## Usage
+## Example usage
 
-At the moment there's two commands you can see in Command Pallete (`ctrl+p`)
+At the moment there's four commands you can see in Command Pallete (`ctrl+p`)
 
 1. Perpsidian: Prompt selection
 2. Perpsidian: Prompt selection (return with links)
 3. Perpsidian: Prompt every line in selection
 4. Perpsidian: Prompt every line in selection (return with links)
-
-First command will replace your selection with answer from Perplexity, second will do the same thing but adds links following the answer below.
-
-## Example usage
 
 <details open>
 <summary>Perpsidian: Prompt selection</summary>
