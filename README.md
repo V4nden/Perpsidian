@@ -36,9 +36,8 @@ First command will replace your selection with answer from Perplexity, second wi
 <details open>
 <summary>Perpsidian: Prompt selection</summary>
 <br>
-```
 Prompt: What is Obsidian.MD?
-```
+
 
 > Obsidian is a personal knowledge base and note-taking software that operates on Markdown files. It allows users to make internal links for notes and visualize the connections as a graph. The software is designed to help users organize and structure their thoughts and knowledge in a flexible, non-linear way. It is available on various platforms, including Windows, macOS, Android, Linux, and iOS. Obsidian is free for personal use, with commercial licenses available for purchase. It is known for its features such as the ability to turn notes into an online wiki, knowledge base, documentation, or digital garden, and it is constantly being improved by the developers with new releases. The software uses military-grade AES-256 encryption to secure notes, and users can customize it by adding plugins and themes to extend its functionality.
 
@@ -47,9 +46,8 @@ Prompt: What is Obsidian.MD?
 <details open>
 <summary>Perpsidian: Prompt selection (return with links)</summary>
 <br>
-```
 Prompt: What is Obsidian.MD?
-```
+
 
 > Obsidian is a personal knowledge base and note-taking software that operates on Markdown files. It allows users to make internal links for notes and visualize the connections as a graph. The software is designed to help users organize and structure their thoughts and knowledge in a flexible, non-linear way. It is available on various platforms, including Windows, macOS, Android, Linux, and iOS. Obsidian is free for personal use, with commercial licenses available for purchase. It is known for its features such as the ability to turn notes into an online wiki, knowledge base, documentation, or digital garden, and it is constantly being improved by the developers with new releases. The software uses military-grade AES-256 encryption to secure notes, and users can customize it by adding plugins and themes to extend its functionality.
 
@@ -64,12 +62,11 @@ Prompt: What is Obsidian.MD?
 <details open>
 <summary>Perpsidian: Prompt every line in selection</summary>
 <br>
-```
-Prompt: 
-What is Obsidian.MD?
-Obsidian.MD advantages over notion 
-Why the Cola tastes better that Pepsi?
-```
+  
+Prompt: <br>
+What is Obsidian.MD? <br>
+Obsidian.MD advantages over notion <br> 
+Why the Cola tastes better that Pepsi? <br>
 
 # What is Obsidian.MD?
 
@@ -108,12 +105,12 @@ The difference in taste between Coca-Cola and Pepsi can be attributed to their i
 <details open>
 <summary>Perpsidian: Prompt every line in selection (return with links)</summary>
 <br>
-```
-Prompt: 
-What is Obsidian.MD?
-Obsidian.MD advantages over notion 
-Why the Cola tastes better that Pepsi?
-```
+
+Prompt: <br>
+What is Obsidian.MD? <br>
+Obsidian.MD advantages over notion <br> 
+Why the Cola tastes better that Pepsi? <br>
+
 
 # What is Obsidian.MD?
 
