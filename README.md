@@ -16,7 +16,7 @@ Now install Perpsidian:
 
 1. Go to releases page and download `main.js`, `manifest.json` and `main.py`
 2. Create folder in {{obsidian_vault}}/.obsidian/plugins
-3. Put those files here
+3. Put these files here
 4. Restart Obsidian
 5. **You're done!**
 
