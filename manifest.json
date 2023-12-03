@@ -1,6 +1,6 @@
 {
   "id": "ppsdn",
-  "name": "Perplexity API",
+  "name": "Perpsidian",
   "version": "1.0.0",
   "minAppVersion": "0.15.0",
   "description": "Perpsidian: Unofficial perplexity integration for obsidian",

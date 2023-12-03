@@ -1,4 +1,4 @@
-import { Editor, MarkdownView, Plugin } from "obsidian";
+import { Editor, MarkdownView, Notice, Plugin } from "obsidian";
 
 import { exec } from "child_process";
 
@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS: MyPluginSettings = {
 };
 
 export default class MyPlugin extends Plugin {
-  perplexity(prompt: string, urls: boolean) {
+  perplexity(prompt: string, urls: boolean): Promise<string> {
     return new Promise((resolve, reject) => {
       const python = exec(
         //@ts-ignore bc of basePath
@@ -36,32 +36,90 @@ export default class MyPlugin extends Plugin {
     });
   }
 
+  delay(seconds: number) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(true);
+      }, seconds * 1000);
+    });
+  }
+
   async onload() {
     this.addCommand({
-      id: "pplxsearch",
+      id: "ppsdsearch",
       name: "Prompt selection",
       editorCallback: (editor: Editor, view: MarkdownView) => {
         let selection = editor.getSelection();
         let line = editor.getCursor().line;
-        editor.replaceSelection("`Generating...`");
+        new Notice(`Generating... (${selection})`);
         this.perplexity(selection, false).then((response) => {
-          editor.setLine(line, "");
-          editor.setValue(editor.getValue() + response);
+          editor.setLine(line, response);
         });
       },
     });
 
     this.addCommand({
-      id: "pplxsearchwlinks",
+      id: "ppsdsearchwlinks",
       name: "Prompt selection (return with links)",
       editorCallback: (editor: Editor, view: MarkdownView) => {
         let selection = editor.getSelection();
         let line = editor.getCursor().line;
-        editor.replaceSelection("`Generating...`");
+        new Notice(`Generating... (${selection})`);
         this.perplexity(selection, true).then((response) => {
-          editor.setLine(line, "");
-          editor.setValue(editor.getValue() + response);
+          editor.setLine(line, response);
         });
+      },
+    });
+
+    this.addCommand({
+      id: "ppsdsearchwlinkslines",
+      name: "Prompt every line in selection (return with links)",
+      editorCallback: async (editor: Editor, view: MarkdownView) => {
+        let questions = editor.getSelection().split("\n");
+        let answer = ``;
+
+        for (const question of questions) {
+          new Notice(`Generating... (${question})`);
+          await this.perplexity(question, true).then((response) => {
+            answer += `# ${question.replace(
+              question[0],
+              question[0].toUpperCase()
+            )}\n\n${response}\n---\n`;
+          });
+          console.log(questions.indexOf(question) === questions.length - 1);
+          questions.indexOf(question) === questions.length - 1
+            ? new Notice(`Done!`)
+            : new Notice("Waiting for 7 secs. (pass too many requests)") &&
+              (await this.delay(7));
+        }
+        let line = editor.getCursor().line;
+        editor.setLine(line, answer);
+      },
+    });
+
+    this.addCommand({
+      id: "ppsdsearchlines",
+      name: "Prompt every line in selection",
+      editorCallback: async (editor: Editor, view: MarkdownView) => {
+        let questions = editor.getSelection().split("\n");
+        let answer = ``;
+
+        for (const question of questions) {
+          new Notice(`Generating... (${question})`);
+          await this.perplexity(question, false).then((response) => {
+            answer += `# ${question.replace(
+              question[0],
+              question[0].toUpperCase()
+            )}\n\n${response}\n---\n`;
+          });
+          console.log(questions.indexOf(question) === questions.length - 1);
+          questions.indexOf(question) === questions.length - 1
+            ? new Notice(`Done!`)
+            : new Notice("Waiting for 7 secs. (pass too many requests)") &&
+              (await this.delay(7));
+        }
+        let line = editor.getCursor().line;
+        editor.setLine(line, answer);
       },
     });
   }
